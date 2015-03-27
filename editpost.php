@@ -33,7 +33,6 @@
 			}
 		}
 ?>
-
 <html>
 <head>
 	<link rel="icon" href="profile_image/Project.png" type="image/gif" sizes="16x16">
@@ -69,16 +68,16 @@
 									</tr> 
 									<tr>
 										<td style="font-size: 17px;">Project Title :</td>
-										<td> <input type="text" class="ltext" name="ptitle" placeholder="Project title" value="<?php echo $data['title'] ?>" required> </td>
+										<td> <input type="text" class="ltext" name="ptitle" placeholder="Project title" value="<?php echo $data['title'] ?>"> </td>
 									</tr> 
 									<tr>
 										<td style="font-size: 17px;">Description :</td>
-										<td> <textarea cols=35 rows=4 class="dtext" name="description" placeholder="Description" <?php echo $data['description'] ?> required></textarea> </td>
+										<td> <textarea cols=35 rows=4 class="dtext" name="description" placeholder="Description" <?php echo $data['description'] ?> ></textarea> </td>
 									</tr> 
 									<tr>
 										<td style="font-size: 17px;"> Catagory :</td>
 										<td>
-											<select name="catagory" required>
+											<select name="catagory" >
 												<option value="">Select any one catagory</option>
 												<option value="major" <?PHP if($data['catagory'] == 'major'){ echo "selected"; }?>>Final year project (Major) </option>
 												<option value="minor" <?PHP if($data['catagory'] == 'minor'){ echo "selected"; }?>>Third year project (Minor) </option>
@@ -96,11 +95,11 @@
 									</tr> 
 									<tr>
 										<td style="font-size: 17px;"> Snapshot :</td>
-										<td> <input type="file"  name="image" value="<?php echo $data['image'] ?>" required><a href="up_image/<?php echo $data['image']; ?>">  <font size=1px><?php echo $data['image'] ?></font> </a> </td>
+										<td> <input type="file"  name="image" value="<?php echo $data['image'] ?>" ><a href="up_image/<?php echo $data['image']; ?>">  <font size=1px><?php echo $data['image'] ?></font> </a> </td>
 									</tr> 
 									<tr>
 										<td style="font-size: 17px;"> Main report<span>*</span> :</td>
-										<td> <input type="file"  name="mainfile" value="<?php echo $data['mainfile'] ?>" required><a href="up_file/<?php echo $data['mainfile']; ?>"> <font size=1px><?php echo $data['mainfile'] ?></font></a></td>
+										<td> <input type="file"  name="mainfile" value="<?php echo $data['mainfile'] ?>" ><a href="up_file/<?php echo $data['mainfile']; ?>"> <font size=1px><?php echo $data['mainfile'] ?></font></a></td>
 									</tr> 
 									<tr>
 										<td style="font-size: 17px;"> Link to file :</td>
