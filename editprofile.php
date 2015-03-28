@@ -9,24 +9,19 @@
 			$country=trim($_POST['country']);
 			$city=trim($_POST['city']);
 			$college=trim($_POST['college']);
-			if($pass==""){
-				$query=$user->profileupdate1($fname,$lname,$email,$profilepic,$country,$city,$college);
-			}
-			else{
-				$query=$user->profileupdate($fname,$lname,$email,$pass,$profilepic,$country,$city,$college);
-			}
-			if($query){
+            $user_id=$_GET['user_id'];
+		$query=$user->profileupdate($fname,$lname,$email,$pass,$profilepic,$country,$city,$college, $user_id);
+			
+        if($query){
 				if($_FILES["profilepic"]["size"]>1024)
 				{
 					move_uploaded_file($_FILES["profilepic"]["tmp_name"],"profile_image/".$profilepic);	
 				}
 				echo"Updated successfully!!";
-				header('Location:profile.php?user_id='.$_SESSION['user_id']);
 			}
 			else{
-				echo"Something went wrong... Try again ";
-				header('Location:editprofile.php?act=error&user_id='.$_SESSION['user_id']);
-			}
+				    echo"Something went wrong... Try again ";
+                }
 		}
 ?>
 <?php 
@@ -58,11 +53,11 @@
 	<!--content start -->
 	<div class="lcontent">
 		<div class="wrapper">
-		</br>
+		<br>
 		<h1 align="center"><blink> UPDATE YOUR PROFILE </blink></h1>
-		</br>
+		<br>
 			<div class="scontent">
-				<form name="editprofile" method="post" action="" enctype="multipart/form-data">
+				<form name="editprofile" method="post" action="#" enctype="multipart/form-data">
 					<table cellspacing=15 align=center>
 						<tr>
 							<td rowspan=5> <img src="profile_image/demo.png" width=150 height=150 alt="Profile picture"></td>

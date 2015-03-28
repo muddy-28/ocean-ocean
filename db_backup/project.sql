@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2015 at 04:08 PM
+-- Generation Time: Mar 28, 2015 at 06:32 AM
 -- Server version: 5.6.23
 -- PHP Version: 5.3.29
 
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `projects` (
   `filelink` varchar(255) NOT NULL,
   `user_id` int(4) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `projects`
@@ -76,7 +76,8 @@ INSERT INTO `projects` (`project_id`, `title`, `description`, `catagory`, `image
 (14, 'demo 2', 'demo 2 demo 2 demo 2 demo 2 demo 2 demo 2 demo 2 demo 2 demo 2 demo 2 demo 2 demo 2 demo 2 demo 2 demo 2 demo 2 demo 2 demo 2 demo 2 demo 2 demo 2 demo 2 demo 2 demo 2 demo 2 demo 2 demo 2 demo 2', 'other', 'SG_3142_Screenshot (5).png', 'SuGa_9759_Screenshot (35).png', '', 4, '2015-03-02 06:51:25'),
 (15, 'demo 3', 'demo 3 demo 3 demo 3 demo 3 demo 3 demo 3 demo 3 demo 3 demo 3 demo 3 demo 3 demo 3 demo 3 demo 3 demo 3 demo 3 demo 3 demo 3 demo 3 demo 3 demo 3 demo 3 demo 3', 'minor', 'SG_6330_Screenshot (30).png', 'SuGa_6422_Screenshot (35).png', 'facebook.com', 6, '2015-03-02 07:02:16'),
 (16, 'The Student Information System in C', 'The Student Information System in C The Student Information System in C The Student Information System in C The Student Information System in C', 'c', 'SG_4089_Screenshot (25).png', 'SuGa_8011_Screenshot (36).png', '', 6, '2015-03-02 09:47:26'),
-(17, 'addd', 'lakhdn kakhsd ahsd asdh', 'other', 'SG_9576_Screenshot (6).png', 'SuGa_3344_Screenshot (40).png', '.j', 4, '2015-03-06 06:18:24');
+(17, 'addd', 'lakhdn kakhsd ahsd asdh', 'other', 'SG_9576_Screenshot (6).png', 'SuGa_3344_Screenshot (40).png', '.j', 4, '2015-03-06 06:18:24'),
+(18, 'Adnan', 'asdasdagvd\r\nbhdhsbc\r\nbhcshchsdc\r\nhbcshbchsc\r\nhbchsdc', 'minor', 'SG_8867_Screen Shot 2015-03-27 at 8.23.31 PM.png', 'SuGa_7514_Screen Shot 2015-03-27 at 8.47.27 PM.png', 'xbhbxahsbxahbx', 11, '2015-03-27 16:32:19');
 
 -- --------------------------------------------------------
 
@@ -91,19 +92,23 @@ CREATE TABLE IF NOT EXISTS `user` (
   `email` varchar(225) NOT NULL,
   `username` varchar(225) NOT NULL,
   `password` varchar(225) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `profilepic` varchar(60) NOT NULL,
+  `country` varchar(15) NOT NULL,
+  `city` varchar(15) NOT NULL,
+  `college` varchar(15) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `firstname`, `lastname`, `email`, `username`, `password`, `date`) VALUES
-(4, 'Sujan', 'Gainju', 'imsujan276@gmail.com', 'imsujan276', '7c317006772feabda0d5623317f7fea1', '2015-02-23 13:45:23'),
-(5, 'zarin', 'ekith', 'zarin@gmail.com', 'zarin_ekith', 'cf0ab4cf8ac0e1f585f496ed1ebdb6e0', '2015-02-24 09:59:56'),
-(6, 'suresh', 'gainju', 'dboysuresh@gmail.com', 'imsuresh23', 'c2da3a63074a4a0d207402ff831262a1', '2015-03-02 07:01:23'),
-(9, 'su', 'su', 'abc@abc.com', 'sujan276', 'ac4e0e3b8a02976a3ee82ab7b7de7745', '2015-03-05 09:43:37'),
-(11, 'adnan', 'shafique', 'ad11105033@gmail.com', '11105033', '2257f94f6f88f0f5b637d3d1c60f093d', '2015-03-27 15:51:48');
+INSERT INTO `user` (`user_id`, `firstname`, `lastname`, `email`, `username`, `password`, `date`, `profilepic`, `country`, `city`, `college`) VALUES
+(4, 'Sujan', 'Gainju', 'imsujan276@gmail.com', 'imsujan276', '7c317006772feabda0d5623317f7fea1', '2015-02-23 13:45:23', '', '', '', ''),
+(5, 'zarin', 'ekith', 'zarin@gmail.com', 'zarin_ekith', 'cf0ab4cf8ac0e1f585f496ed1ebdb6e0', '2015-02-24 09:59:56', '', '', '', ''),
+(6, 'suresh', 'gainju', 'dboysuresh@gmail.com', 'imsuresh23', 'c2da3a63074a4a0d207402ff831262a1', '2015-03-02 07:01:23', '', '', '', ''),
+(9, 'su', 'su', 'abc@abc.com', 'sujan276', 'ac4e0e3b8a02976a3ee82ab7b7de7745', '2015-03-05 09:43:37', '', '', '', ''),
+(11, 'Adnan', 'Shafique', 'ad11105003@gmail.com', '11105033', '452e74eb843d0bfcbfcb6f5cd90e6f1f', '2015-03-28 06:31:27', 'pro_5757_', 'Pakistan', 'khayalii', '');
 
 --
 -- Indexes for dumped tables
@@ -140,7 +145,7 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `project_id` int(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
+  MODIFY `project_id` int(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `user`
 --

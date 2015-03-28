@@ -37,10 +37,13 @@ class userClass{
 	}
 	
 
-	public function profileupdate($fname,$lname,$email,$pass,$profilepic,$country,$city,$college){
-			$sql = "update user set firstname='$fname',lastname='$lname',email='$email',password='".md5($pass)."',
-			profilepic='$profilepic',country='$country',city='$city',college='$college'";
-			return $this->exec($sql);
+	public function profileupdate ($fname,$lname,$email,$pass,$profilepic,$country,$city,$college, $user_id){
+        if($pass!='')
+        {        $sql = "UPDATE user SET firstname='$fname',lastname='$lname',email='$email',password='".md5($pass)."', profilepic='$profilepic',country='$country',city='$city',college='$college' WHERE user_id='$user_id'";
+        }else
+        {$sql = "UPDATE user SET firstname='$fname',lastname='$lname',email='$email', profilepic='$profilepic',country='$country',city='$city',college='$college' WHERE user_id='$user_id'";
+        }
+        return $this->exec($sql);
 	}
 
 	public function profileupdate1($fname,$lname,$email,$profilepic,$country,$city,$college){

@@ -17,10 +17,7 @@
 				echo"Sucessfuly commented";
 			}
 			else{
-                echo $id;
-                echo $_SESSION['user_id'];
-                echo $comment;
-				echo"error occured";
+                echo"error occured";
 			}
 	}
 ?>
@@ -52,7 +49,7 @@
 		<div class="ppost">
 			<div class="ptitle">
 				<h2> <?php echo $query['title']; ?></h2>
-				<p> &bull;&nbsp;<a href="profile.php?<?php echo $query['user_id']; ?>"><?php echo $query['firstname'];?> <?php echo $query['lastname']; ?> </a> </p>
+				<p> &bull;&nbsp;<a href="profile.php?user_id=<?php echo $query['user_id']; ?>"><?php echo $query['firstname'];?> <?php echo $query['lastname']; ?> </a> </p>
 			</div>
 			<div class="pbody">
 				<div class="pcontent">
